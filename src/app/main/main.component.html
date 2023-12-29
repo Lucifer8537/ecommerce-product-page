@@ -1,0 +1,110 @@
+<div class="main-container">
+  <div class="image-container">
+    <img
+      src="{{ displayImage }}"
+      alt=""
+      class="display-img"
+      (click)="displayImageClick()"
+    />
+    <div *ngIf="!isMobileView" class="small-image-container">
+      <ng-container *ngFor="let t of displayThumbnailList; let i = index">
+        <img
+          src="{{ t.src }}"
+          alt="thumbnail-img"
+          class="thumbnail-img"
+          [ngClass]="t.select ? 'thumbnail-img-select' : ''"
+          (click)="onClickThumbnail(i)"
+        />
+      </ng-container>
+    </div>
+    <img
+      *ngIf="isMobileView"
+      src="../../assets/icon-previous.svg"
+      alt="icon-previous"
+      class="left-nav"
+      (click)="onMobImageChange('left')"
+    />
+    <img
+      *ngIf="isMobileView"
+      src="../../assets/icon-next.svg"
+      alt="icon-next"
+      class="right-nav"
+      (click)="onMobImageChange('right')"
+    />
+  </div>
+  <div class="product-container">
+    <div class="sneaker-label">SNEAKER COMPANY</div>
+    <div class="sneaker-edition">Fall Limited Edition Sneakers</div>
+    <div class="sneaker-details">
+      These low-profile sneakers are your perfect casual wear companion.
+      Featuring a durable rubber outer sole, they'll withstand everything the
+      weather can offer.
+    </div>
+    <div class="cost-change-container">
+      <div class="cost-container">
+        <span class="cost">$125.00</span>
+        <div class="off">50%</div>
+      </div>
+      <div class="strikeoff">$250.00</div>
+    </div>
+    <div class="cart-btn-container">
+      <div class="product-btn">
+        <img
+          src="../../assets/icon-minus.svg"
+          class="icon-minus"
+          alt="icon-minus"
+          (click)="onCarValueChange('-')"
+        />
+        <span class="cartValue">{{ cartValue }}</span>
+        <img
+          src="../../assets/icon-plus.svg"
+          class="icon-plus"
+          alt="icon-plus"
+          (click)="onCarValueChange('+')"
+        />
+      </div>
+      <button (click)="onClickAddCart()" class="add-to-cart-btn">
+        <img src="../../assets/icon-cart.svg" alt="cart" class="cart" />
+        Add to cart
+      </button>
+    </div>
+  </div>
+  <div *ngIf="!isMobileView && imgClick" class="img-click-container">
+    <div class="img-click">
+      <div class="icon-close-container">
+        <img
+          src="../../assets/icon-close.svg"
+          alt="icon-close"
+          class="icon-close"
+          (click)="displayImageClick()"
+        />
+      </div>
+      <div class="img-display-click-container">
+        <img
+          src="../../assets/icon-previous.svg"
+          alt="icon-previous"
+          class="left-nav"
+          (click)="onMobImageChange('left')"
+        />
+        <img
+          src="../../assets/icon-next.svg"
+          alt="icon-next"
+          class="right-nav"
+          (click)="onMobImageChange('right')"
+        />
+        <img src="{{ displayImage }}" alt="" class="img-click-display" />
+      </div>
+      <div class="small-image-container-display">
+        <ng-container *ngFor="let t of displayThumbnailList; let i = index">
+          <img
+            src="{{ t.src }}"
+            alt="thumbnail-img"
+            class="thumbnail-img-click"
+            [ngClass]="t.select ? 'thumbnail-img-select' : ''"
+            (click)="onClickThumbnail(i)"
+          />
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

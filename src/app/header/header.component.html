@@ -1,0 +1,41 @@
+<div class="header-container">
+  <div class="header-left">
+    <img
+      src="../../assets/icon-menu.svg"
+      alt="icon-menu"
+      *ngIf="isMobileView"
+      (click)="onClickMenu()"
+    />
+    <img src="../../assets/logo.svg" alt="logo" class="logo" />
+    <div *ngIf="!isMobileView" class="menu-container">
+      <span *ngFor="let m of menuList" class="submenu padding-10">
+        {{ m }}
+      </span>
+    </div>
+  </div>
+  <div class="header-right">
+    <img
+      src="../../assets/icon-cart.svg"
+      alt="icon-cart"
+      class="icon-cart"
+      (click)="openDialog()"
+    />
+    <img
+      src="../../assets/image-avatar.png"
+      alt="image-avatar"
+      class="profile"
+    />
+  </div>
+  <div *ngIf="menuOn" (click)="onClickMenu()" class="backdrop"></div>
+  <div *ngIf="menuOn" class="menu-container">
+    <img
+      src="../../assets/icon-close.svg"
+      alt="icon-close"
+      class="icon-close"
+      (click)="onClickMenu()"
+    />
+    <span *ngFor="let m of menuList" class="submenu padding-10">
+      {{ m }}
+    </span>
+  </div>
+</div>

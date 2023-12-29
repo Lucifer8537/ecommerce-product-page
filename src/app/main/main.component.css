@@ -1,0 +1,272 @@
+.main-container {
+  display: flex;
+  margin: 5% 14% 0% 14%;
+  gap: 15%;
+}
+.image-container {
+  max-width: 350px;
+  display: grid;
+}
+.display-img {
+  width: 100%;
+  border-radius: 15px;
+}
+.small-image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8%;
+}
+.thumbnail-img {
+  width: 18%;
+  border-radius: 10px;
+}
+.product-container {
+  font-family: "KumbhSans";
+  max-width: 450px;
+}
+.sneaker-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: hsl(26, 100%, 55%);
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+}
+.sneaker-edition {
+  font-weight: 800;
+  font-size: 43px;
+  margin-bottom: 25px;
+  line-height: 1em;
+}
+.sneaker-details {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.7;
+  line-height: 1.5em;
+  margin-bottom: 25px;
+}
+.cost-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.cost {
+  font-weight: 800;
+  font-size: 30px;
+}
+.off {
+  font-weight: 800;
+  color: hsl(26, 100%, 55%);
+  font-size: 16px;
+  padding: 3px 10px;
+  background-color: hsl(25, 100%, 94%);
+  border-radius: 5px;
+}
+.strikeoff {
+  color: hsl(220, 14%, 75%);
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: line-through;
+  margin-bottom: 25px;
+}
+.cart-btn-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.product-btn {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 17px 17px;
+  background-color: hsl(223, 64%, 98%);
+  border-radius: 10px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.add-to-cart-btn {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "KumbhSans";
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: hsl(26, 100%, 55%);
+  border: 1px solid transparent;
+  width: -webkit-fill-available;
+  justify-content: center;
+  padding: 15px 0px;
+  border-radius: 10px;
+  box-shadow: 1px 20px 57px 0px hsl(25, 100%, 94%);
+}
+.cart {
+  filter: brightness(0) invert(1);
+}
+
+.cartValue {
+  width: 15px;
+}
+.img-click {
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 4%;
+}
+.img-click-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: grid;
+}
+.icon-close-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.icon-close {
+  filter: brightness(0) invert(1);
+  margin-left: auto;
+}
+.img-display-click-container {
+  position: relative;
+}
+@media (min-width: 679px) {
+  .display-img,
+  .thumbnail-img {
+    cursor: pointer;
+  }
+
+  .thumbnail-img {
+    border: 4px solid transparent;
+  }
+
+  .thumbnail-img-select {
+    border-color: orange !important;
+    opacity: 0.7;
+  }
+  .icon-minus,
+  .icon-plus,
+  .add-to-cart-btn {
+    cursor: pointer;
+  }
+
+  .icon-minus:hover {
+    filter: brightness(1.5);
+  }
+  .icon-plus:hover {
+    filter: brightness(1.5);
+  }
+  .add-to-cart-btn:hover {
+    opacity: 0.7;
+  }
+  .img-click-display {
+    width: 450px;
+    border-radius: 10px;
+  }
+  .small-image-container-display {
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: space-evenly;
+    margin-top: 15px;
+  }
+  .thumbnail-img-click {
+    width: 80px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .thumbnail-img-click:hover {
+    border-color: orange;
+    opacity: 0.7;
+  }
+  .icon-close {
+    cursor: pointer;
+  }
+  .icon-close:hover {
+    filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(330deg);
+  }
+  .left-nav,
+  .right-nav {
+    position: absolute;
+    padding: 3% 4%;
+    background-color: white;
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .left-nav {
+    left: -5%;
+  }
+  .right-nav {
+    right: -5%;
+  }
+}
+@media (max-width: 678px) {
+  .main-container {
+    margin: 0;
+    display: grid;
+    gap: 30px;
+  }
+  .image-container {
+    max-width: none;
+    position: relative;
+  }
+  .display-img {
+    border-radius: unset;
+  }
+  .left-nav,
+  .right-nav {
+    position: absolute;
+    padding: 3% 4%;
+    background-color: white;
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .left-nav {
+    left: 5%;
+  }
+  .right-nav {
+    right: 5%;
+  }
+  .product-container {
+    padding: 0% 5%;
+  }
+  .sneaker-label {
+    font-size: 71%;
+  }
+  .sneaker-edition {
+    font-size: 210%;
+  }
+  .sneaker-details {
+    font-weight: 500;
+  }
+  .cost-container,
+  .strikeoff {
+    margin-bottom: 0;
+  }
+  .cost-change-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .cart-btn-container {
+    display: grid;
+  }
+  .product-btn {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .add-to-cart-btn {
+    margin-bottom: 20%;
+  }
+}

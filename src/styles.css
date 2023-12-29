@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "KumbhSans";
+  src: url("fonts/KumbhSans-VariableFont.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "KumbhSans";
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0) !important; /* Set the desired opacity */
+}
+.custom-dialog {
+  border-radius: 5px;
+  max-width: unset !important;
+}

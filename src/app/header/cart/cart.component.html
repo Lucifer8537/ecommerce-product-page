@@ -1,0 +1,25 @@
+<div class="cart-container">
+  <div class="cart-title">Cart</div>
+  <div *ngIf="cartEmpty" class="cart-details">
+    {{ emptyCart }}
+  </div>
+  <div class="cart-data-details" *ngIf="!cartEmpty">
+    <div class="cart-data">
+      <img src="{{ imgSrc }}" alt="cart-img" class="cart-img" />
+      <div class="cart-details-container">
+        <span class="cart-title-data">{{ title }}</span>
+        <div class="cart-price-container">
+          <span class="cart-price">${{ amount }}.00 x {{ count }}</span>
+          <span class="cart-total">${{ total }}.00</span>
+        </div>
+      </div>
+      <img
+        src="../../../assets/icon-delete.svg"
+        class="icon-delete"
+        alt="icon-delete"
+        (click)="onClickDelete()"
+      />
+    </div>
+    <button class="checkout">Checkout</button>
+  </div>
+</div>
